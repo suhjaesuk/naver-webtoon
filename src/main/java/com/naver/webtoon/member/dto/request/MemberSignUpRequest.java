@@ -17,4 +17,9 @@ public class MemberSignUpRequest {
                 .cookieCount(0)
                 .build();
     }
+
+    public MemberSignUpRequest(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }
