@@ -96,12 +96,28 @@ public class MemberServiceTest {
     @DisplayName("로그인 시 회원을 찾지 못하면 예외를 반환한다.")
     @Test
     public void throwIfCannotFoundMemberWhenLogin() {
-        //TODO: implements
+        MemberLoginRequest request = new MemberLoginRequest(USERNAME, PASSWORD);
+
+        Mockito.when(memberRepository.findByUsername(request.getUsername())).thenReturn(Optional.empty());
+
+        HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
+
+        assertThatThrownBy(() -> memberService.login(request,response))
+                .isInstanceOf(WebtoonException.class);
     }
 
     @DisplayName("로그인 시 비밀번호가 다르면 예외를 반환한다.")
     @Test
     public void throwIfDifferentPasswordWhenLogin() {
-        //TODO: implements
+        MemberLoginRequest request = new MemberLoginRequest(USERNAME, PASSWORD);
+        Member member = MemberFixture.toMember(USERNAME, PASSWORD, COOKIE_COUNT);
+
+        when(memberRepository.findByUsername(request.getUsername())).thenReturn(Optional.of(member));
+        when(passwordEncoder.matches(request.getPassword(), member.getPassword())).thenReturn(false);
+
+        HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
+
+        assertThatThrownBy(() -> memberService.login(request,response))
+                .isInstanceOf(WebtoonException.class);
     }
 }
