@@ -40,7 +40,6 @@ public class MemberRepositoryTest {
     @DisplayName("회원 저장 시 이름이 없다면 예외를 반환한다.")
     @Test
     void throwIfUsernameIsNullWhenSaveMember() {
-        // TODO: implements
         Member member = MemberFixture.toMember(null, PASSWORD, COOKIE_COUNT);
 
         assertThatThrownBy(() -> memberRepository.save(member))
