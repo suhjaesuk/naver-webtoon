@@ -31,12 +31,12 @@ public class WebtoonPublishingDay extends Timestamped {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="publish_day_id")
-    private PublishDay publishDay;
+    private PublishingDay publishingDay;
 
     @Builder
-    public WebtoonPublishingDay(Long id, Webtoon webtoon, PublishDay publishDay) {
+    public WebtoonPublishingDay(Long id, Webtoon webtoon, PublishingDay publishingDay) {
         this.id = id;
         this.webtoon = webtoon;
-        this.publishDay = publishDay;
+        this.publishingDay = publishingDay;
     }
 }

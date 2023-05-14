@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +19,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PublishDay extends Timestamped {
+public class PublishingDay extends Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +27,11 @@ public class PublishDay extends Timestamped {
     private Long id;
 
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private DayOfTheWeek dayOfTheWeek;
 
     @Builder
-    public PublishDay(Long id, DayOfTheWeek dayOfTheWeek) {
+    public PublishingDay(Long id, DayOfTheWeek dayOfTheWeek) {
         this.id = id;
         this.dayOfTheWeek = dayOfTheWeek;
     }

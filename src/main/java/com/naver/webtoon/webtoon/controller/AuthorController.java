@@ -1,8 +1,8 @@
 package com.naver.webtoon.webtoon.controller;
 
 import com.naver.webtoon.common.response.SuccessMessage;
-import com.naver.webtoon.webtoon.dto.request.PublishDayRegisterRequest;
-import com.naver.webtoon.webtoon.service.PublishDayService;
+import com.naver.webtoon.webtoon.dto.request.AuthorRegisterRequest;
+import com.naver.webtoon.webtoon.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class PublishDayController {
+public class AuthorController {
 
-    private final PublishDayService publishDayService;
+    private final AuthorService authorService;
 
-    @PostMapping("/publish-day")
-    public ResponseEntity<SuccessMessage<Void>> registerPublishDay(@RequestBody PublishDayRegisterRequest request) {
-        publishDayService.registerPublishDay(request);
-        return new ResponseEntity<>(new SuccessMessage<>("연재일등록성공",null), HttpStatus.CREATED);
+    @PostMapping("/author")
+    public ResponseEntity<SuccessMessage<Void>> registerAuthor(@RequestBody AuthorRegisterRequest request) {
+        authorService.registerAuthor(request);
+        return new ResponseEntity<>(new SuccessMessage<>("작가등록성공",null), HttpStatus.CREATED);
     }
 }

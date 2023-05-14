@@ -2,6 +2,7 @@ package com.naver.webtoon.webtoon.entity;
 
 import com.naver.webtoon.common.time.Timestamped;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,4 +25,9 @@ public class Author extends Timestamped {
     @Column(nullable = false)
     private String name;
 
+    @Builder
+    public Author(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

@@ -19,7 +19,7 @@ public class HashTagController {
     private final HashTagService hashTagService;
 
     @PostMapping("/hash-tag")
-    public ResponseEntity<SuccessMessage<Void>> registerPublishDay(@RequestBody HashTagRegisterRequest request) {
+    public ResponseEntity<SuccessMessage<Void>> registerHashTag(@RequestBody HashTagRegisterRequest request) {
         hashTagService.registerHashTag(request);
         return new ResponseEntity<>(new SuccessMessage<>("해시태그등록성공",null), HttpStatus.CREATED);
     }
