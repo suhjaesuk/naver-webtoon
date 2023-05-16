@@ -26,9 +26,10 @@ public enum ErrorCode {
 
     NOT_FOUND_HASH_TAG(HttpStatus.NOT_FOUND, "HASH_TAG_001", "찾을 수 없는 해시태그입니다."),
 
-    NOT_FOUND_PUBLISH_DAY(HttpStatus.NOT_FOUND, "PUBLISH_DAY_001", "찾을 수 없는 연재일입니다."),
-    NOT_FOUND_DAY_OF_THE_WEEK(HttpStatus.NOT_FOUND, "PUBLISH_DAY_002", "찾을 수 없는 요일입니다."),
+    NOT_FOUND_PUBLISHING_DAY(HttpStatus.NOT_FOUND, "PUBLISHING_DAY_001", "찾을 수 없는 연재일입니다."),
+    NOT_FOUND_DAY_OF_THE_WEEK(HttpStatus.NOT_FOUND, "PUBLISHING_DAY_002", "찾을 수 없는 요일입니다."),
 
+    NOT_FOUND_WEBTOON_PUBLISHING_DAY(HttpStatus.NOT_FOUND, "WEBTOON_PUBLISHING_DAY_002", "찾을 수 없는 웹툰연재요일입니다."),
     ;
 
     private final HttpStatus httpStatus;
