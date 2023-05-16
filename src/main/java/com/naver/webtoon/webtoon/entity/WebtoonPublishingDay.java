@@ -22,7 +22,7 @@ public class WebtoonPublishingDay extends Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "webtoon_publish_day_id")
+    @Column(name = "webtoon_publishing_day_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -30,7 +30,7 @@ public class WebtoonPublishingDay extends Timestamped {
     private Webtoon webtoon;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="publish_day_id")
+    @JoinColumn(name="publishing_day_id")
     private PublishingDay publishingDay;
 
     @Builder
