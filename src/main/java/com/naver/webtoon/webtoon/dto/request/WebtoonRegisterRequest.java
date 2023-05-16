@@ -21,7 +21,7 @@ public class WebtoonRegisterRequest {
     private String description;
     private String thumbnail;
     private String serializedStatus;
-    private List<String> publishDay;
+    private List<String> publishingDay;
     private List<String> hashTag;
 
     public Webtoon toWebtoon(Author author) {
@@ -39,7 +39,7 @@ public class WebtoonRegisterRequest {
     public WebtoonPublishingDay toWebtoonPublishingDay(Webtoon webtoon, PublishingDay publishingDay) {
         return WebtoonPublishingDay.builder()
                 .webtoon(webtoon)
-                .publishDay(publishingDay)
+                .publishingDay(publishingDay)
                 .build();
     }
 
