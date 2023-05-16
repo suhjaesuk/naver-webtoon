@@ -54,4 +54,12 @@ public class Webtoon extends Timestamped {
         this.serializedStatus = serializedStatus;
         this.author = author;
     }
+
+    public void update(String title, String description, String thumbnail, SerializedStatus serializedStatus, Author author) {
+        this.title = title;
+        this.description = description;
+        this.thumbnail = thumbnail;
+        this.serializedStatus = serializedStatus;
+        this.author = author;
+    }
 }
